@@ -1,9 +1,7 @@
 pipeline{
-    agent {
-        label 'ubuntu'
-    }
+    agent any
 
-    stages{
+      stages{
 
         stage('Pull Repo'){
             steps {
