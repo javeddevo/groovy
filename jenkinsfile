@@ -12,7 +12,7 @@ pipeline{
 
         stage('Build'){
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install package'
             }
         }
 
@@ -23,8 +23,8 @@ pipeline{
             
         }
   
-        stage('email'){
-	    step{
+         stage('email'){
+	    steps{
 	        emailext body: 'build is done', recipientProviders: [developers()], subject: 'gameoflife', to: 'javeed.abdul9@gmail.com'
 
              }
